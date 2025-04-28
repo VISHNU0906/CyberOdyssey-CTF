@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Embed secret.txt into mystery.jpg with no passphrase
+steghide embed -cf mystery.jpg -ef secret.txt -p ""

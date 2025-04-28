@@ -1,0 +1,11 @@
+# generate.py
+# Generate a Caesar-shifted ciphertext from the flag
+shift = 5
+flag = "flag{caesar_master}"
+# Convert to uppercase and shift only A–Z
+cipher = "".join(
+    chr((ord(c) - 65 + shift) % 26 + 65) if 'A' <= c <= 'Z' else c
+    for c in flag.upper()
+)
+with open("ciphertext.txt", "w") as f:
+    f.write(cipher)
