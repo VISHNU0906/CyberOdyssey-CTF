@@ -1,0 +1,1 @@
+gcc login.c -o login -fno-stack-protector -z execstack  # Disable security features
