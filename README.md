@@ -1,23 +1,55 @@
-# Cyber Odyssey CTF
+# Cyber Odyssey CTF 🛡️
 
-This repository contains everything you need to launch **Cyber Odyssey**, a three-tier Capture-The-Flag event built on CTFd.
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/YourUsername/CyberOdyssey-CTF/build.yml?style=flat&logo=github)](https://github.com/YourUsername/CyberOdyssey-CTF/actions)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ctfd/ctfd?logo=docker&label=CTFd%20Pulls)](https://hub.docker.com/r/ctfd/ctfd)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Structure
+**A modular Capture-The-Flag (CTF) platform for cybersecurity education, competition, and training.**  
+Deploy locally or scale to cloud infrastructure with ease. Designed for CTF organizers, educators, and red/blue teams.
 
-- **CTFd_app/** – Flask/CTFd application and Vercel config  
-- **challenges/** – Three challenge folders:  
-  - Easy-CaesarShift (Crypto)  
-  - Medium-HiddenInPixels (Stego)  
-  - Hard-AdversarialAssault (AI/ML)
+---
 
-## Quick Start
+## 📌 Table of Contents
+- [Overview](#-overview)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Challenges](#-challenges)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
-1. Clone this repo.  
-2. Create & activate a Python venv.  
-3. Install requirements (`pip install -r CTFd_app/requirements.txt`).  
-4. Run `python CTFd_app/app.py` and visit http://localhost:8000.  
-5. In the Admin panel, add the three challenges (see their folders).  
-6. Set up sequential requirements:  
-   - HiddenInPixels → requires CaesarShift  
-   - AdversarialAssault → requires HiddenInPixels  
-7. Share the URL with players.
+---
+
+## 🌟 Overview
+Cyber Odyssey CTF is a ready-to-deploy CTF framework featuring **three difficulty-tiered challenges** (Easy, Medium, Hard) built on [CTFd](https://ctfd.io/). The platform includes:
+- Cryptography (Caesar Cipher)
+- Steganography (Image-based secrets)
+- Reverse Engineering (Binary exploitation)
+  
+Ideal for workshops, hackathons, or corporate training. Fully customizable and extensible.
+
+---
+
+## 🚀 Features
+- **Tiered Challenges**: Sequential unlocking based on difficulty.
+- **Auto-Scoring**: Real-time leaderboard with CTFd.
+- **Multi-Hosting Support**: Deploy on Docker, AWS, GCP, or bare metal.
+- **Modular Design**: Add/remove challenges via YAML configs.
+- **Future-Ready**: Built-in support for Kubernetes, Terraform, and CI/CD pipelines.
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+- Python 3.8+
+- Docker (optional)
+- `git`, `pip`, `venv`
+
+### Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/YourUsername/CyberOdyssey-CTF.git
+   cd CyberOdyssey-CTF
