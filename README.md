@@ -1,55 +1,40 @@
-# Cyber Odyssey CTF 🛡️
+# Cyber Odyssey CTF Platform 🚩🔐
+[![GitHub License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Docker Build](https://img.shields.io/docker/cloud/build/yourusername/ctfd-cyberodyssey)](https://hub.docker.com/r/yourusername/ctfd-cyberodyssey)
+[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/YourUsername/CyberOdyssey-CTF/build.yml?style=flat&logo=github)](https://github.com/YourUsername/CyberOdyssey-CTF/actions)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ctfd/ctfd?logo=docker&label=CTFd%20Pulls)](https://hub.docker.com/r/ctfd/ctfd)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-**A modular Capture-The-Flag (CTF) platform for cybersecurity education, competition, and training.**  
-Deploy locally or scale to cloud infrastructure with ease. Designed for CTF organizers, educators, and red/blue teams.
+**Enterprise-grade CTF platform with modular challenges, auto-scoring, and multi-cloud deployment capabilities.**
 
 ---
 
-## 📌 Table of Contents
-- [Overview](#-overview)
-- [Features](#-features)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Challenges](#-challenges)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgements](#-acknowledgements)
+## 🌟 Key Features
+- 🕵️ **3 Difficulty Tiers**: Crypto, Stego, Reverse Engineering challenges
+- 📊 **Real-Time Leaderboard**: Integrated with CTFd scoring engine
+- 🐳 **Docker-First Architecture**: Single-command deployment
+- ☁️ **Cloud Agnostic**: Deploy on AWS/GCP/Azure or bare metal
+- 🔄 **CI/CD Ready**: GitHub Actions pipeline included
+- 📚 **Challenge Templates**: Create new challenges in minutes
 
 ---
 
-## 🌟 Overview
-Cyber Odyssey CTF is a ready-to-deploy CTF framework featuring **three difficulty-tiered challenges** (Easy, Medium, Hard) built on [CTFd](https://ctfd.io/). The platform includes:
-- Cryptography (Caesar Cipher)
-- Steganography (Image-based secrets)
-- Reverse Engineering (Binary exploitation)
-  
-Ideal for workshops, hackathons, or corporate training. Fully customizable and extensible.
-
----
-
-## 🚀 Features
-- **Tiered Challenges**: Sequential unlocking based on difficulty.
-- **Auto-Scoring**: Real-time leaderboard with CTFd.
-- **Multi-Hosting Support**: Deploy on Docker, AWS, GCP, or bare metal.
-- **Modular Design**: Add/remove challenges via YAML configs.
-- **Future-Ready**: Built-in support for Kubernetes, Terraform, and CI/CD pipelines.
-
----
-
-## ⚙️ Installation
-
-### Prerequisites
-- Python 3.8+
-- Docker (optional)
-- `git`, `pip`, `venv`
-
-### Steps
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/YourUsername/CyberOdyssey-CTF.git
-   cd CyberOdyssey-CTF
+## 🧱 Project Architecture
+```bash
+CyberOdyssey-CTF/
+├── CTFd_app/                  # Core CTFd Application
+│   ├── app/                   # Custom CTFd plugins
+│   ├── Dockerfile             # Multi-stage build config
+│   ├── requirements.txt       # Python dependencies
+│   └── config/                # Environment configurations
+├── challenges/                # Challenge Modules
+│   ├── crypto/                # Cryptography challenges
+│   ├── stego/                 # Steganography challenges
+│   └── reversing/             # Reverse Engineering challenges
+├── infra/                     # Infrastructure-as-Code
+│   ├── terraform/             # AWS/GCP provisioning
+│   └── kubernetes/            # Helm charts for cluster deployment
+├── docs/                      # Documentation
+│   ├── SETUP.md               # Detailed installation guide
+│   └── CHALLENGE_CREATION.md  # Challenge development guide
+└── scripts/                   # Automation scripts
+    ├── deploy.sh              # One-click deployment
+    └── challenge_verify.sh    # Automated challenge testing
