@@ -38,3 +38,55 @@ CyberOdyssey-CTF/
 └── scripts/                   # Automation scripts
     ├── deploy.sh              # One-click deployment
     └── challenge_verify.sh    # Automated challenge testing
+
+# 🚀 Getting Started
+
+## 📋 Prerequisites
+- Python 3.8+
+- Docker 20.10+
+- Git 2.30+
+
+## 🛠️ Installation
+```bash
+# Clone repository
+git clone https://github.com/YourUsername/CyberOdyssey-CTF.git
+cd CyberOdyssey-CTF
+
+# Build Docker containers
+docker-compose -f CTFd_app/docker-compose.yml build
+
+# Start services
+docker-compose -f CTFd_app/docker-compose.yml up -d
+
+# Core Configuration
+SECRET_KEY=your_super_secure_key
+DATABASE_URL=postgresql://user:pass@db:5432/ctfd
+
+# Email Settings
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USE_TLS=true
+MAIL_USERNAME=your@email.com
+MAIL_PASSWORD=app_password
+
+# Challenge Settings
+MAX_TEAM_SIZE=3
+REGISTRATION_OPEN=true
+
+name: "Caesar's Revenge"
+category: "Cryptography"
+value: 100
+flag: "flag{rot13_is_too_mainstream}"
+files:
+  - ciphertext.txt
+  - hint.txt
+requirements:
+  - "Basic Python"
+  - "Cryptography Concepts"
+
+Production Deployment
+AWS EC2 Deployment
+# Using Terraform
+cd infra/terraform/aws
+terraform init
+terraform apply -var="access_key=YOUR_AWS_KEY" -var="secret_key=YOUR_AWS_SECRET"
